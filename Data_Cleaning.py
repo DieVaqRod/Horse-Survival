@@ -101,3 +101,9 @@ total_2 = pd.concat([total_2, df_train_imputed], axis=1)
 test_2 = test.drop(num_cols, axis=1).reset_index()
 test_2 = pd.concat([test_2, df_test_imputed], axis=1)
 
+# Check the shape of the train and test data set
+print('Shape of the Total data set : {}'.format(total_2.shape))
+print('Shape of the Test data set : {}'.format(test_2.shape))
+
+total_2.head(5)
+total_2.head(5)

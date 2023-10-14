@@ -9,6 +9,9 @@ from copy import deepcopy
 from functools import partial
 import gc
 import warnings
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+
 
 # Import sklearn classes for model selection, cross validation, and performance evaluation
 from sklearn.model_selection import train_test_split
