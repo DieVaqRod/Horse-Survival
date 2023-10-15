@@ -11,6 +11,8 @@ import gc
 import warnings
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+import imgkit
+
 
 
 # Import sklearn classes for model selection, cross validation, and performance evaluation

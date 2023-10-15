@@ -2,6 +2,8 @@ from Imports import *
 from Utilities import print_sl
 from Utilities import summary
 
+
+
 train = pd.read_csv(r'C:\Users\vaque\PycharmProjects\Github\Horse-Survival\Data_Inputs\train.csv')
 test = pd.read_csv(r'C:\Users\vaque\PycharmProjects\Github\Horse-Survival\Data_Inputs\test.csv')
 
@@ -36,6 +38,7 @@ train.head()
 
 styled = summary(train_orig, test).style.background_gradient(cmap='Blues')
 styled.to_html("styled_output.html")
+
 
 # Takeways
 # Binary encoding for Lesson 2 (only 4 uniques)
