@@ -54,8 +54,14 @@ for i in range(5):  # Loop over rows
         ax.yaxis.grid(True, linestyle='--', which='major', color='gray', alpha=.25)
 
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust layout and leave space for the suptitle
-plt.show()
 
+
+BASE_DIR = r"C:\Users\vaque\PycharmProjects\Github\Horse-Survival\Logs"
+
+def save_plot_to_base_dir(filename):
+    full_path = os.path.join(BASE_DIR, filename)
+    plt.savefig(full_path)
+    print(f"Plot saved to {full_path}")
 
 
 # 6 PC's for Data visualization
@@ -77,8 +83,13 @@ for i in range(2):  # Loop over rows
         # Add grid to y-axis
         ax.yaxis.grid(True, linestyle='--', which='major', color='gray', alpha=.25)
 
-plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust layout and leave space for the suptitle
-plt.show()
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])# Adjust layout and leave space for the suptitle
+
+
+
+plt.title("6 PCs")
+save_plot_to_base_dir("6 PCs.png")
+
 
 
 
@@ -100,7 +111,10 @@ for i in range(3):  # Loop over the first three PCs
     ax.yaxis.grid(True, linestyle='--', which='major', color='gray', alpha=.25)
 
 plt.tight_layout()
-plt.show()
+
+
+plt.title("3 PCs")
+save_plot_to_base_dir("3 PCs.png")
 
 
 # Visualize 3D PCA
@@ -111,7 +125,6 @@ X_pca6.rename(mapper={'PC1': 'PC1',
                       'PC3': 'PC3'}, axis=1, inplace=True)
 
 
-print(X_pca6.columns)
 
 
 # Define the color map
@@ -145,9 +158,9 @@ custom_lines = [plt.Line2D([],[], ls="", marker='.',
 ax.legend(custom_lines, [lt[0] for lt in labelTups],
           loc='center left', bbox_to_anchor=(1.0, .5))
 
-plt.show()
 
-
+plt.title("3D PCA")
+save_plot_to_base_dir("3D PCA.png")
 
 # Filter out the 'Live' data
 
@@ -177,7 +190,11 @@ ax.view_init(35, -10)
 custom_lines = [plt.Line2D([], [], ls="", marker='.', mec='k', mfc=c, mew=.1, ms=20) for c in colors_filtered]
 ax.legend(custom_lines, [lt[0] for lt in labelTups_filtered], loc='center left', bbox_to_anchor=(1.0, .5))
 
-plt.show()
+
+
+plt.title("3D PCA Filter out the Live")
+save_plot_to_base_dir("3D PCA Filter out the Live.png")
+
 
 #there's a significant overlap among the categories. This suggests that additional analysis or feature engineering
 # might be required to more effectively distinguish among the three outcomes.
